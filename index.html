@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Megha Verma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do App</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="app">
+        <div id="todo-header">
+          <h1>to-do</h1>
+          <!-- <img src="https://cdn-icons-png.freepik.com/256/11946/11946336.png?uid=R182226373&ga=GA1.1.1313046537.1736231732&semt=ais_hybrid" class="header"/> -->
+        </div>
+        <div id="todo-input">
+          <input type="text" id="input-box" placeholder="Add task">
+          <img onclick="addTodo()" src="assets/add.png" class="actionBtn icon"/>
+          <!-- <img onclick="clearInput()" src="https://cdn-icons-png.freepik.com/256/16518/16518631.png?uid=R182226373&ga=GA1.1.1313046537.1736231732&semt=ais_hybrid" class="actionBtn icon"/>   -->
+        </div>
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
