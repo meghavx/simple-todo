@@ -60,7 +60,8 @@ body {
   
     .actionBtn {
       max-height: 2.25em;
-
+      cursor: pointer;
+      
       &:hover {
         transform: scale(1.15);
         transition: 0.3s ease-in-out;
@@ -106,7 +107,7 @@ body {
 
   .actionBtn {
     max-height: 2.25rem;
-    border-radius: 0 1em 1em 0;
+    cursor: pointer;
 
     &:hover {
       transform: scale(1.1);

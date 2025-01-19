@@ -2,30 +2,23 @@
 
 const inputBox = document.getElementById("input-box");
 const todoUl = document.getElementById("todo-list");
+const defaultBgColor = "#eacda3";
 const colorPicker = document.getElementById("color-picker");
 const changeBgColor = document.getElementById("change-bgColor");
 
 // Add new task to todo list when "Add" button is clicked
 const addTodo = () => {
   let newTodo = inputBox.value.trim();
-  if (newTodo === "") {
-    alert("Please write something!");
-    return;
-  } 
-  else {
-    const todoLi = document.createElement("LI");
-    todoLi.textContent = newTodo;
-    
-    const closeSpan = document.createElement("SPAN");
-    closeSpan.textContent = "\u00D7";
-    closeSpan.className = "close";
-
-    todoLi.appendChild(closeSpan);
-    todoUl.appendChild(todoLi);
-    
-    clearInput();
-    saveDataToLocalStorage();
-  }
+  if (newTodo === "") return;
+  const todoLi = document.createElement("LI");
+  todoLi.textContent = newTodo;
+  const closeSpan = document.createElement("SPAN");
+  closeSpan.textContent = "\u00D7";
+  closeSpan.className = "close";
+  todoLi.appendChild(closeSpan);
+  todoUl.appendChild(todoLi);
+  clearInput();
+  saveDataToLocalStorage();
 }
 
 // Clear input box when "Clear" button is clicked
@@ -53,19 +46,13 @@ const saveDataToLocalStorage = () => {
 
 const showTodoList = () => {
   todoUl.innerHTML = localStorage.getItem("todoData");
-  const savedColor = localStorage.getItem("bgColor") || "#fff";
+  const savedColor = localStorage.getItem("bgColor") || defaultBgColor;
   document.body.style.background = savedColor;
   colorPicker.value = savedColor;
 }
 
 // Show saved todo list
 showTodoList();
-
-// Clear todos
-const clearTodos = () => {
-  todoUl.innerHTML = "";
-  localStorage.removeItem("todoData");
-}
 
 // Add event listener for "Enter" key press on input box
 inputBox.addEventListener("keydown", (e) => {
@@ -74,16 +61,21 @@ inputBox.addEventListener("keydown", (e) => {
   }
 });
 
-// Trigger color picker on image click
 changeBgColor.addEventListener("click", () => {
   colorPicker.click();
 });
 
 // Change background color of the app when a color is selected
 colorPicker.addEventListener("input", (e) => {
-  const color = e.target.value; 
-  console.log("Selected Color:", e.target.value);
-  console.log(colorPicker);
+  const color = e.target.value;
   document.body.style.background = color;
   localStorage.setItem("bgColor", color);
 });
+
+// Clear todos
+const clearTodos = () => {
+  todoUl.innerHTML = "";
+  localStorage.removeItem("todoData");
+  localStorage.removeItem("bgColor");
+  document.body.style.background = defaultBgColor;
+}
