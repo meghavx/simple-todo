@@ -61,3 +61,10 @@ const clearTodos = () => {
   todoUl.innerHTML = "";
   localStorage.removeItem("todoData");
 }
+
+// Add event listener for "Enter" key press on input box
+inputBox.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    addTodo();
+  }
+});
