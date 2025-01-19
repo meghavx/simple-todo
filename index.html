@@ -15,13 +15,13 @@
         <div id="todo-header">
           <h1>to-do</h1>
           <div class="header-buttons">
-            <img src="assets/theme.png" class="actionBtn change-theme"/>
-            <img src="https://cdn-icons-png.freepik.com/256/13386/13386457.png?uid=R182226373&ga=GA1.1.1313046537.1736231732&semt=ais_hybrid" class="actionBtn clear-todos">
+            <img src="assets/theme.png" onclick="" class="actionBtn change-theme"/>
+            <img src="assets/delete.png" onclick="clearTodos()" class="actionBtn clear-todos">
           </div>
         </div>
         <div id="todo-input">
           <input type="text" id="input-box" placeholder="Add task">
-          <img onclick="addTodo()" src="assets/add.png" class="actionBtn icon"/>
+          <img src="assets/add.png" onclick="addTodo()"class="actionBtn icon"/>
           <!-- <img onclick="clearInput()" src="https://cdn-icons-png.freepik.com/256/16518/16518631.png?uid=R182226373&ga=GA1.1.1313046537.1736231732&semt=ais_hybrid" class="actionBtn icon"/>   -->
         </div>
         <ul id="todo-list"></ul>

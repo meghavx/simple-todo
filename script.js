@@ -55,3 +55,9 @@ const showTodoList = () => {
 
 // Show saved todo list
 showTodoList();
+
+// Clear todos
+const clearTodos = () => {
+  todoUl.innerHTML = "";
+  localStorage.removeItem("todoData");
+}
