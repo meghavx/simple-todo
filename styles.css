@@ -11,9 +11,12 @@
 }
 
 body {
-  background: var(--bgColor); /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* fallback for old browsers */
+  background: var(--bgColor); 
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); 
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #d6ae7b, #eacda3); 
 }
 
 .container {
@@ -44,7 +47,8 @@ body {
     font-size: 4em;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: -0.1em;
-    font-weight: 400;
+    font-weight: 500;
+    text-align: center;
   }
 
   .header-buttons {
@@ -63,8 +67,16 @@ body {
       }
     }
 
-    .change-theme {
+    .change-bgColor {
       max-height: 2em;
+    }
+
+    #color-picker {
+      display: none;
+    }
+
+    .colorpick-eyedropper-input-trigger {
+      display: none;
     }
   }
 }

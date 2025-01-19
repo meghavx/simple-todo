@@ -2,6 +2,8 @@
 
 const inputBox = document.getElementById("input-box");
 const todoUl = document.getElementById("todo-list");
+const colorPicker = document.getElementById("color-picker");
+const changeBgColor = document.getElementById("change-bgColor");
 
 // Add new task to todo list when "Add" button is clicked
 const addTodo = () => {
@@ -51,6 +53,9 @@ const saveDataToLocalStorage = () => {
 
 const showTodoList = () => {
   todoUl.innerHTML = localStorage.getItem("todoData");
+  const savedColor = localStorage.getItem("bgColor") || "#fff";
+  document.body.style.background = savedColor;
+  colorPicker.value = savedColor;
 }
 
 // Show saved todo list
@@ -67,4 +72,18 @@ inputBox.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     addTodo();
   }
+});
+
+// Trigger color picker on image click
+changeBgColor.addEventListener("click", () => {
+  colorPicker.click();
+});
+
+// Change background color of the app when a color is selected
+colorPicker.addEventListener("input", (e) => {
+  const color = e.target.value; 
+  console.log("Selected Color:", e.target.value);
+  console.log(colorPicker);
+  document.body.style.background = color;
+  localStorage.setItem("bgColor", color);
 });
