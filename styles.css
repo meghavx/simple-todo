@@ -11,12 +11,9 @@
 }
 
 body {
-  /* fallback for old browsers */
-  background: var(--bgColor); 
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); 
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #d6ae7b, #eacda3); 
+  background: var(--bgColor); /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .container {
@@ -32,6 +29,10 @@ body {
     padding: 2.5em 1.875em 4.375em;
     background-color: white;
     border-radius: 0.625em;
+
+    @media (max-width: 768px) {
+      max-width: 24em;
+    }
   }
 }
 
@@ -49,6 +50,10 @@ body {
     letter-spacing: -0.1em;
     font-weight: 500;
     text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 2.75em;
+    }
   }
 
   .header-buttons {
@@ -57,10 +62,14 @@ body {
     align-items: center;
     justify-content: flex-end;
     gap: 4%;
-  
+
     .actionBtn {
       max-height: 2.25em;
       cursor: pointer;
+      
+      @media (max-width: 768px) {
+        max-height: 2em;
+      }
       
       &:hover {
         transform: scale(1.15);
@@ -99,6 +108,12 @@ body {
     border-radius: 1.25em;
     padding: 0.75em;
     font-size: 1em;
+
+    @media (max-width: 768px) {
+      font-size: 0.875em;   
+      border-radius: 1em;
+      padding: 0.675em;   
+    }
   
     &:focus {
       border-left: 0.375em solid var(--mintGreen);
@@ -109,6 +124,10 @@ body {
     max-height: 2.25rem;
     cursor: pointer;
 
+    @media (max-width: 768px) {
+      max-height: 2rem;
+    }
+    
     &:hover {
       transform: scale(1.1);
       transition: 0.3s ease-in-out;
@@ -129,6 +148,10 @@ body {
   font-size: 1.1em;
   font-weight: 600;
 
+  @media (max-width: 768px) {
+    font-size: 1em; 
+  }
+
   /* Prepend unchecked box to todo items */
   &::before {
     content: '';
@@ -141,6 +164,11 @@ body {
     background-position: center;
     top: 0.6em;
     left: 0.75em;
+
+    @media (max-width: 768px) {
+      height: 1.5em;
+      width: 1.5em;
+    }
   }
 
   &.checked {
@@ -164,6 +192,11 @@ body {
     font-size: 1.375em;
     font-weight: 600;
     text-align: center;
+
+    @media (max-width: 768px) {
+      height: 2.5em;
+      width: 2.5em;
+    }
 
     &:hover {
       transform: scale(1.2);
