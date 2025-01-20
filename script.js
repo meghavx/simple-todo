@@ -45,7 +45,8 @@ const saveDataToLocalStorage = () => {
 }
 
 const showTodoList = () => {
-  todoUl.innerHTML = localStorage.getItem("todoData");
+  const savedTodos = localStorage.getItem("todoData") || "";
+  todoUl.innerHTML = savedTodos;
   const savedColor = localStorage.getItem("bgColor") || defaultBgColor;
   document.body.style.background = savedColor;
   colorPicker.value = savedColor;
